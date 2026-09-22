@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "▶ Application du schéma D1..."
+wrangler d1 execute toutbot --file=schema.sql
+
+echo "▶ Secret mot de passe admin..."
+wrangler secret put TOUTBOT_ADMIN_PASSWORD
+
+echo "▶ (Optionnel) Clé Pollinations pour l'IA..."
+# wrangler secret put POLLINATIONS_KEY
+
+echo "▶ Déploiement..."
+wrangler deploy
+
+echo ""
+echo "✅ ToutBot Prestige est en ligne !"
