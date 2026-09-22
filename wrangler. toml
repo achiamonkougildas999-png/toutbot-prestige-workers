@@ -1,0 +1,14 @@
+name = "toutbot-prestige"
+main = "worker.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "toutbot"
+database_id = "REMPLACE_PAR_TON_D1_ID"
+
+[vars]
+TOUTBOT_COOKIE_SECURE = "1"
+TOUTBOT_DDG_NEWS = "1"
+TOUTBOT_GOOGLE_NEWS = "1"
